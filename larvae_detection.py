@@ -62,7 +62,7 @@ class SESAMI:
         # if(self.debug==True and self.indexNum==2):
         if(self.debug==True):
             font = cv2.FONT_HERSHEY_COMPLEX_SMALL
-            cv2.putText(image, "Sesami count: " + str(numSesami), (image.shape[1]-500, 40), font, 2, (255, 1, 126), 3)
+            cv2.putText(image, "larvae count: " + str(numSesami), (image.shape[1]-500, 40), font, 2, (255, 1, 126), 3)
             cv2.imwrite("larvae_folder/detectedLarvae.png", image)
             # cv2.imshow("Sesami #" + str(self.indexNum) , image)
 
