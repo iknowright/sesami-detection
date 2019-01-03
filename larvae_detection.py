@@ -36,9 +36,9 @@ class SESAMI:
 
         # if(self.debug==True and self.indexNum==2):
         if(self.debug==True):            
-            cv2.imshow("GRAY1", gray1)
-            cv2.imshow("GRAY2", gray2)
-            cv2.imshow("Final GRAY", gray)
+            cv2.imwrite("larvae_folder/GRAY1.jpg", gray1)
+            cv2.imwrite("larvae_folder/GRAY2.jpg", gray2)
+            cv2.imwrite("larvae_folder/Final_GRAY.jpg", gray)
             # pass
 
         (cnts, _) = cv2.findContours(gray, cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE)
@@ -63,7 +63,7 @@ class SESAMI:
         if(self.debug==True):
             font = cv2.FONT_HERSHEY_COMPLEX_SMALL
             cv2.putText(image, "Sesami count: " + str(numSesami), (image.shape[1]-500, 40), font, 2, (255, 1, 126), 3)
-            # cv2.imwrite("detectSesami.png", image)
-            cv2.imshow("Sesami #" + str(self.indexNum) , image)
+            cv2.imwrite("larvae_folder/detectedLarvae.png", image)
+            # cv2.imshow("Sesami #" + str(self.indexNum) , image)
 
         return numSesami, image
